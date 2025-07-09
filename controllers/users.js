@@ -29,16 +29,19 @@ export const fetchAllProfiles = async (req, res) => {
   };
 
 
-  
 
  export const fetchSingleProfile = async (req, res) => {
-    const {userId} = req.params
-    const data = await users.findById(userId);
+    const {id} = req.params
+    
+    const data = await users.findById(id);
+  console.log(data,"sssingleprofile");
     res.status(200).json({
       status: "success",
       message: "successfully fetched all profiles",
       data: data,
     });
   };
+
+
 
    
